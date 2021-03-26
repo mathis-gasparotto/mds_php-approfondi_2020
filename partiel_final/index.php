@@ -1,9 +1,12 @@
 <?php
 include_once "layout/header.php";
+require_once "layout/navbar.php";
 require_once "layout/redirToLogin.php";
 ?>
 
 <h1>Top of Games</h1>
+
+<h2>Top 5</h2>
 
 <?php
 

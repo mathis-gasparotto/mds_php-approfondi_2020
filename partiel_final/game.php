@@ -1,5 +1,6 @@
 <?php
 include_once "layout/header.php";
+require_once "layout/navbar.php";
 require_once "layout/redirToLogin.php";
 require_once "class/Game.php";
 
