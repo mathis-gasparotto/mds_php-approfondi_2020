@@ -2,4 +2,4 @@
 
 unset($_SESSION['connected']);
 
-header("Location: index.php");
+header("Location: login.php");
