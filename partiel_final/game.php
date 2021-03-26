@@ -18,8 +18,8 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
     }
     $game = new Game($game['game_id'], $game['name'], $game['img'], $game['description'], $game['rating']); ?>
 
-    <div class="game-content">
-      <h1>
+    <div class="content">
+      <h1 class="title">
         <?php echo $game->getName(); ?>
       </h1>
       <img src="<?php echo $game->getImg() ?>" alt="<?php echo $game->getName() ?>" class="game-img">

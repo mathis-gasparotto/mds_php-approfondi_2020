@@ -79,56 +79,61 @@ include_once "layout/header.php";
 
 
 ?>
-<div class="sign-form" id="sign-in">
-  <form method="POST" class="row g-3">
-    <div class="mb-3">
-      <label for="login-in" class="form-label">Login</label>
-      <input type="text" class="form-control" name="login-in" placeholder="Name" />
-    </div>
-    <div class="mb-3">
-      <label for="pass-in" class="form-label">Password</label>
-      <input type="password" class="form-control" name="pass-in" placeholder="Password" />
-    </div>
+<div id="sign-container">
+  <div class="sign-form" id="sign-in">
+    <h3>Sign In</h3>
+    <form method="POST" class="row g-3">
+      <div class="mb-3">
+        <label for="login-in" class="form-label">Login</label>
+        <input type="text" class="form-control" name="login-in" placeholder="Name" />
+      </div>
+      <div class="mb-3">
+        <label for="pass-in" class="form-label">Password</label>
+        <input type="password" class="form-control" name="pass-in" placeholder="Password" />
+      </div>
 
-    <div class="col-12">
-      <button type="submit" class="btn btn-primary" name="sign-in-submit" value="submit">Sign in</button>
-    </div>
-  </form>
+      <div class="col-12">
+        <button type="submit" class="btn btn-primary" name="sign-in-submit" value="submit">Sign in</button>
+      </div>
+    </form>
 
-  <div class="text-danger">
-    <?php if (isset($signInError) && !empty($signInError)) {
-      echo $signInError;
-    } ?>
+    <div class="text-danger">
+      <?php if (isset($signInError) && !empty($signInError)) {
+        echo $signInError;
+      } ?>
+    </div>
+  </div>
+
+
+  <div class="sign-form" id="sign-up">
+    <h3>Sign Up</h3>
+    <form method="POST" class="row g-3">
+      <div class="mb-3">
+        <label for="login-up" class="form-label">Login</label>
+        <input type="text" class="form-control" name="login-up" placeholder="Name" />
+      </div>
+      <div class="mb-3">
+        <label for="pass-up" class="form-label">Password</label>
+        <input type="password" class="form-control" name="pass-up" placeholder="Password" />
+      </div>
+      <div class="mb-3">
+        <label for="confirm-pass-up" class="form-label">Confirm Password</label>
+        <input type="password" class="form-control" name="confirm-pass-up" placeholder="Confirm Password" />
+      </div>
+
+      <div class="col-12">
+        <button type="submit" class="btn btn-primary" name="sign-up-submit" value="submit">Sign up</button>
+      </div>
+    </form>
+
+    <div class="text-danger">
+      <?php if (isset($signUpError) && !empty($signUpError)) {
+        echo $signUpError;
+      } ?>
+    </div>
   </div>
 </div>
 
-
-<div class="sign-form" id="sign-up">
-  <form method="POST" class="row g-3">
-    <div class="mb-3">
-      <label for="login-up" class="form-label">Login</label>
-      <input type="text" class="form-control" name="login-up" placeholder="Name" />
-    </div>
-    <div class="mb-3">
-      <label for="pass-up" class="form-label">Password</label>
-      <input type="password" class="form-control" name="pass-up" placeholder="Password" />
-    </div>
-    <div class="mb-3">
-      <label for="confirm-pass-up" class="form-label">Confirm Password</label>
-      <input type="password" class="form-control" name="confirm-pass-up" placeholder="Confirm Password" />
-    </div>
-
-    <div class="col-12">
-      <button type="submit" class="btn btn-primary" name="sign-up-submit" value="submit">Sign up</button>
-    </div>
-  </form>
-
-  <div class="text-danger">
-    <?php if (isset($signUpError) && !empty($signUpError)) {
-      echo $signUpError;
-    } ?>
-  </div>
-</div>
 
 
 <?php include_once "layout/footer.php";

@@ -4,30 +4,33 @@ require_once "layout/navbar.php";
 require_once "layout/redirToLogin.php";
 ?>
 
-<h1>Top of Games</h1>
+<div class="content">
+  <h1 class="title">Top of Games</h1>
 
-<h2>Top 5</h2>
+  <h2 class="subtitle">Top 5</h2>
 
+  <?php
+
+  require_once "class/Game.php";
+
+  try {
+
+    require_once "utils/connectToDB.php";
+
+    $stmt = $pdo->prepare("SELECT * FROM games");
+    $stmt->execute();
+    $games = $stmt->fetchAll(PDO::FETCH_ASSOC);
+  ?>
+    <div class="game-list"> <?php
+                            for ($i = 0; $i < 5; $i++) {
+                              require "layout/games-for.php";
+                            } ?>
+    </div>
+</div>
 <?php
-
-require_once "class/Game.php";
-
-try {
-
-  require_once "utils/connectToDB.php";
-
-  $stmt = $pdo->prepare("SELECT * FROM games");
-  $stmt->execute();
-  $games = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-  for ($i = 0; $i < 5; $i++) {
-
-    require "layout/games-for.php";
+  } catch (\PDOException $e) {
+    echo 'Erreur avec PDO : ' . $e->getMessage();
   }
-} catch (\PDOException $e) {
-  echo 'Erreur avec PDO : ' . $e->getMessage();
-}
 
-echo $_SESSION['connected'];
 
-include_once "layout/footer.php";
+  include_once "layout/footer.php";
