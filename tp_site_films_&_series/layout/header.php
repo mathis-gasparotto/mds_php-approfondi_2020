@@ -1,6 +1,8 @@
 <?php
 require_once "data/tvShowsArray.php";
+require_once "class/Show.php";
 require_once "data/moviesArray.php";
+require_once "class/Movie.php";
 ?>
 
 <!DOCTYPE html>
@@ -32,13 +34,20 @@ require_once "data/moviesArray.php";
   </form>
 
   <?php
-  if (isset($_GET['s']) && isset($_GET['s-submit'])) {
+  if (isset($_GET['s']) && !empty($_GET['s']) && isset($_GET['s-submit'])) {
     foreach ($movies as $movie) {
-      if ($_GET['s'] = $movie['title']) {
+      if ($_GET['s'] == $movie['title']) {
         $p = "movie.php?movie= " . $movie['id'];
+        header("Location: $p");
+      }
+    }
+    foreach ($shows as $show) {
+      if ($_GET['s'] == $show['name']) {
+        $p = "show.php?show= " . $show['id'];
         header("Location: $p");
       }
     }
   }
 
-  $movie = new Movie("name", "img", "original_name", 5, 7, "release_date", "overview");
+  // $movie = new Movie("name", "img", "original_name", 5, 7, "date", "overview");
+  // $show = new Show("name", "img", "original_name", 5, 7, "date", "overview");

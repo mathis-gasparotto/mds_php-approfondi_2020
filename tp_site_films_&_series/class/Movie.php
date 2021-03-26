@@ -1,25 +1,36 @@
 <?php
 class Movie
 {
+  private $_id;
   private $_name;
   private $_img;
   private $_original_name;
   private $_vote_average;
   private $_vote_count;
-  private $_release_date;
+  private $_date;
   private $_overview;
 
 
 
-  public function __construct(string $name, string $img, string $original_name, float $vote_average, int $vote_count, string $release_date, string $overview)
+  public function __construct(int $id, string $name, string $img, string $original_name, float $vote_average, int $vote_count, string $date, string $overview)
   {
+    $this->setId($id);
     $this->setName($name);
     $this->setImg($img);
     $this->setOriginalName($original_name);
     $this->setVoteAverage($vote_average);
     $this->setVoteCount($vote_count);
-    $this->setReleaseDate($release_date);
+    $this->setDate($date);
     $this->setOverview($overview);
+  }
+
+  public function setId(string $id)
+  {
+    $this->_id = $id;
+  }
+  public function getId(): string
+  {
+    return $this->_id;
   }
 
   public function setName(string $name)
@@ -67,13 +78,13 @@ class Movie
     return $this->_vote_count;
   }
 
-  public function setReleaseDate(string $release_date)
+  public function setDate(string $date)
   {
-    $this->_release_date = $release_date;
+    $this->_date = $date;
   }
-  public function getReleaseDate(): string
+  public function getDate(): string
   {
-    return $this->_release_date;
+    return $this->_date;
   }
 
   public function setOverview(string $overview)

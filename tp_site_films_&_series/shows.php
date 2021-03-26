@@ -1,4 +1,6 @@
-<?php include_once "layout/header.php"; ?>
+<?php
+include_once "layout/header.php";
+?>
 
 <h2 class="page-title">TV Shows</h2>
 

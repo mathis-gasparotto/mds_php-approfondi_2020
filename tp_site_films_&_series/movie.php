@@ -1,6 +1,9 @@
 <?php include_once "layout/header.php"; ?>
 
 <?php foreach ($movies as $movie) {
+
+  // $movie = new Movie($movie['id'], $movie['title'], $movie['poster_path'], $movie['original_title'], $movie['vote_average'], $movie['vote_count'], $movie['release_date'], $movie['overview']);
+
   if ($_GET['movie'] == $movie['id']) { ?>
     <h3>
       <?php echo $movie['title']; ?>

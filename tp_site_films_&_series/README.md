@@ -8,7 +8,7 @@ une page movie (les carac du film par rapport au GET)
 une page show (les carac du séries par rapport au GET)
 
 BONUS :
-login sur une page login (comme on vu l'autre fois)
+login sur une page login (comme on a vu l'autre fois)
 
 
 
