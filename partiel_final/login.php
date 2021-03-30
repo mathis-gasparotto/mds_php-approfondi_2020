@@ -1,9 +1,6 @@
 <?php
 
-if (session_status() !== PHP_SESSION_ACTIVE) {
-  session_start();
-}
-
+include_once "layout/header.php";
 
 if (isset($_SESSION['connected']) && $_SESSION['connected']) {
   header("Location: index.php");
@@ -75,9 +72,6 @@ try {
 }
 
 
-include_once "layout/header.php";
-
-
 ?>
 <div id="sign-container">
   <div class="sign-form" id="sign-in">
@@ -85,11 +79,11 @@ include_once "layout/header.php";
     <form method="POST" class="row g-3">
       <div class="mb-3">
         <label for="login-in" class="form-label">Login</label>
-        <input type="text" class="form-control" name="login-in" placeholder="Name" />
+        <input type="text" class="form-control" name="login-in" placeholder="Name" required />
       </div>
       <div class="mb-3">
         <label for="pass-in" class="form-label">Password</label>
-        <input type="password" class="form-control" name="pass-in" placeholder="Password" />
+        <input type="password" class="form-control" name="pass-in" placeholder="Password" required />
       </div>
 
       <div class="col-12">
@@ -110,15 +104,15 @@ include_once "layout/header.php";
     <form method="POST" class="row g-3">
       <div class="mb-3">
         <label for="login-up" class="form-label">Login</label>
-        <input type="text" class="form-control" name="login-up" placeholder="Name" />
+        <input type="text" class="form-control" name="login-up" placeholder="Name" required />
       </div>
       <div class="mb-3">
         <label for="pass-up" class="form-label">Password</label>
-        <input type="password" class="form-control" name="pass-up" placeholder="Password" />
+        <input type="password" class="form-control" name="pass-up" placeholder="Password" required />
       </div>
       <div class="mb-3">
         <label for="confirm-pass-up" class="form-label">Confirm Password</label>
-        <input type="password" class="form-control" name="confirm-pass-up" placeholder="Confirm Password" />
+        <input type="password" class="form-control" name="confirm-pass-up" placeholder="Confirm Password" required />
       </div>
 
       <div class="col-12">
