@@ -52,7 +52,6 @@ try {
     if ($_POST['pass-up'] == $_POST['confirm-pass-up']) {
       $stmt = $pdo->prepare("SELECT * FROM users WHERE login = ?");
       $stmt->execute([$_POST['login-up']]);
-      //$user = $stmt->fetch(PDO::FETCH_ASSOC);
       if (!$stmt->fetch()) {
         $stmt = $pdo->prepare("INSERT INTO `users`(`login`, `pass`) VALUES (?, ?)");
         $stmt->bindParam(1, $_POST['login-up']);
