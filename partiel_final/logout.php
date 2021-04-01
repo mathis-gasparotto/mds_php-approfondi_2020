@@ -3,3 +3,5 @@
 unset($_SESSION['connected']);
 
 header("Location: login.php");
+
+exit;
